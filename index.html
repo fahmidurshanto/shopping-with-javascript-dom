@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping with DOM</title>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.5/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+  <header>
+    <div class="navbar bg-base-100 shadow-2xl lg:px-12">
+      <div class="flex-1">
+        <a class="btn btn-ghost normal-case text-xl">Shopping Cart</a>
+      </div>
+      <div class="flex-none gap-2">
+        <div class="form-control">
+          <input type="text" placeholder="Search" class="input input-bordered" />
+        </div>
+        <div class="dropdown dropdown-end">
+          <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+            <div class="w-10 rounded-full">
+              <img src="https://picsum.photos/200" />
+            </div>
+          </label>
+          <ul tabindex="0" class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
+            <li>
+              <a class="justify-between">
+                Profile
+                <span class="badge">New</span>
+              </a>
+            </li>
+            <li><a>Settings</a></li>
+            <li><a>Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="lg:px-12 flex flex-col md:flex-row lg-flex-row">
+      <div class="products-details w-[70%]  m-5 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="card card-compact w-full bg-base-100 shadow-2xl ">
+          <figure>
+            <img src="img/coffee.jpg" alt="coffee" class="w-full h-40" />
+          </figure>
+          <div class="card-body">
+            <h2 id="coffee" class="card-title">Coffee JS!</h2>
+            <p>May your coffee be strong and your Monday be short.</p>
+            <p>Price: $<span id="coffee-price">110</span></p>
+            <p>Quantity: <span id="coffee-quantity">2</span></p>
+            <div class="card-actions justify-end">
+              <button id="coffee-btn" class="btn btn-primary">Add to cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="card card-compact w-full bg-base-100 shadow-2xl ">
+          <figure>
+            <img src="img/heart_js.jpg" alt="heart" class="w-full h-40" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">Heart JS!</h2>
+            <p>May your heart be strong and your Monday be short.</p>
+            <p>Price: $<span>50</span></p>
+            <p>Quantity: <span>10</span></p>
+            <div class="card-actions justify-end">
+              <button id="heart-btn" class="btn btn-primary">Add to cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="card card-compact w-full bg-base-100 shadow-2xl ">
+          <figure>
+            <img src="img/panda.png" alt="panda" class="w-full h-40" />
+          </figure>
+          <div class="card-body">
+            <h2 id="panda" class="card-title">Panda JS!</h2>
+            <p>May your Panda be strong and your Monday be short.</p>
+            <p>Price: $<span id="panda-price">150</span></p>
+            <p>Quantity: <span id="panda-quantity">3</span></p>
+            <div class="card-actions justify-end">
+              <button id="panda-btn" class="btn btn-primary">Add to cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="card card-compact w-full bg-base-100 shadow-2xl ">
+          <figure>
+            <img src="img/umbrella.png" alt="umbrella" class="w-full h-40" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title" id="umbrella">Umbrella JS!</h2>
+            <p>May your umbrella be strong and your Monday be short.</p>
+            <p>Price: $<span id="umbrella-price">100</span></p>
+            <p>Quantity: <span id="umbrella-quantity">1</span></p>
+            <div class="card-actions justify-end">
+              <button id="umbrella-btn" class="btn btn-primary">Add to cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="card card-compact w-full bg-base-100 shadow-2xl ">
+          <figure>
+            <img src="img/vue-js.jpg" alt="vue js" class="w-full h-40" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title" id="vue">Vue JS!</h2>
+            <p>May your vue be strong and your Monday be short.</p>
+            <input id="vue-price" type="text" placeholder="Price" class="input input-bordered input-sm w-full max-w-xs" />
+            <input id="vue-quantity" type="text" placeholder="Quantity" class="input input-bordered input-sm w-full max-w-xs" />
+            <div class="card-actions justify-end">
+              <button id="vue-btn" class="btn btn-primary">Add to cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div class="cart-details mx-auto w-full md:w-[30%] lg:w-[30%]">
+          <h1 class="text-4xl text-center font-bold underline mt-3">Total Products: <span class="text-sky-500">0</span></h1>
+
+          <div class="overflow-x-auto">
+            <table class="table w-full">
+              <!-- head -->
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>Name</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody id="table-container">
+                
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+    </section>
+  </main>
+  <script src="index.js"></script>
+</body>
+</html>
